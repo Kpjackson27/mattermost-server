@@ -2,32 +2,13 @@ dn: ou=testusers,dc=mm,dc=test,dc=com
 changetype: add
 objectclass: organizationalunit
 
+
+# tgroup
 dn: cn=tgroup,ou=testusers,dc=mm,dc=test,dc=com
 changetype: add
 objectclass: groupOfUniqueNames
 uniqueMember: uid=test.one,ou=testusers,dc=mm,dc=test,dc=com
 uniqueMember: uid=test.two,ou=testusers,dc=mm,dc=test,dc=com
-
-dn: cn=developers,ou=testusers,dc=mm,dc=test,dc=com
-changetype: add
-objectclass: groupOfUniqueNames
-uniqueMember: uid=dev.three,ou=testusers,dc=mm,dc=test,dc=com
-
-dn: cn=team-one,cn=developers,ou=testusers,dc=mm,dc=test,dc=com
-changetype: add
-objectclass: groupOfUniqueNames
-uniqueMember: uid=dev.one,ou=testusers,dc=mm,dc=test,dc=com
-
-dn: cn=team-two,cn=developers,ou=testusers,dc=mm,dc=test,dc=com
-changetype: add
-objectclass: groupOfUniqueNames
-uniqueMember: uid=dev.two,ou=testusers,dc=mm,dc=test,dc=com
-
-dn: cn=qa,ou=testusers,dc=mm,dc=test,dc=com
-changetype: add
-objectclass: groupOfUniqueNames
-uniqueMember: uid=qa.one,ou=testusers,dc=mm,dc=test,dc=com
-uniqueMember: uid=qa.two,ou=testusers,dc=mm,dc=test,dc=com
 
 dn: uid=test.one,ou=testusers,dc=mm,dc=test,dc=com
 changetype: add
@@ -45,20 +26,35 @@ cn: Test2
 mail: success+testtwo@simulator.amazonses.com
 userPassword: Password1
 
+
+# developers
+dn: cn=developers,ou=testusers,dc=mm,dc=test,dc=com
+changetype: add
+objectclass: groupOfUniqueNames
+uniqueMember: uid=dev-ops.one,ou=testusers,dc=mm,dc=test,dc=com
+
+dn: uid=dev-ops.one,ou=testusers,dc=mm,dc=test,dc=com
+changetype: add
+objectclass: iNetOrgPerson
+sn: User
+cn: Dev3
+mail: success+devfour@simulator.amazonses.com
+userPassword: Password1
+
+
+# dev team one
+dn: cn=team-one,cn=developers,ou=testusers,dc=mm,dc=test,dc=com
+changetype: add
+objectclass: groupOfUniqueNames
+uniqueMember: uid=dev.one,ou=testusers,dc=mm,dc=test,dc=com
+uniqueMember: uid=dev.three,ou=testusers,dc=mm,dc=test,dc=com
+
 dn: uid=dev.one,ou=testusers,dc=mm,dc=test,dc=com
 changetype: add
 objectclass: iNetOrgPerson
 sn: User
 cn: Dev1
 mail: success+devone@simulator.amazonses.com
-userPassword: Password1
-
-dn: uid=dev.two,ou=testusers,dc=mm,dc=test,dc=com
-changetype: add
-objectclass: iNetOrgPerson
-sn: User
-cn: Dev2
-mail: success+devtwo@simulator.amazonses.com
 userPassword: Password1
 
 dn: uid=dev.three,ou=testusers,dc=mm,dc=test,dc=com
@@ -68,6 +64,29 @@ sn: User
 cn: Dev3
 mail: success+devthree@simulator.amazonses.com
 userPassword: Password1
+
+
+# dev team two
+dn: cn=team-two,cn=developers,ou=testusers,dc=mm,dc=test,dc=com
+changetype: add
+objectclass: groupOfUniqueNames
+uniqueMember: uid=dev.two,ou=testusers,dc=mm,dc=test,dc=com
+
+dn: uid=dev.two,ou=testusers,dc=mm,dc=test,dc=com
+changetype: add
+objectclass: iNetOrgPerson
+sn: User
+cn: Dev2
+mail: success+devtwo@simulator.amazonses.com
+userPassword: Password1
+
+
+# qa team
+dn: cn=qa,ou=testusers,dc=mm,dc=test,dc=com
+changetype: add
+objectclass: groupOfUniqueNames
+uniqueMember: uid=qa.one,ou=testusers,dc=mm,dc=test,dc=com
+uniqueMember: uid=qa.two,ou=testusers,dc=mm,dc=test,dc=com
 
 dn: uid=qa.one,ou=testusers,dc=mm,dc=test,dc=com
 changetype: add
